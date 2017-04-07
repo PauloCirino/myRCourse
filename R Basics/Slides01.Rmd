@@ -511,6 +511,17 @@ Sys.time()
 ```
 
 ## Important Functions
+### system : Runs a System Command.
+```{r}
+system(command = 'python --version')
+```
+
+### Sys.sleep : System sleeps for a while
+```{r}
+Sys.sleep(1.5)
+```
+
+## Important Functions
 ### print : Prints String as is.
 ```{r}
 print('R is super \'cools\'')
