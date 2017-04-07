@@ -1,7 +1,7 @@
 ---
 title: "My R Course - Introduction"
-author: "Paulo Cirino Ribeiro Neto"
-date: "26/01/2017"
+author: "Paulo Cirino Ribeiro Neto - paulocirino.neto@gmail.com"
+date: "07/04/2017"
 output:
   ioslides_presentation:
     transition: slower

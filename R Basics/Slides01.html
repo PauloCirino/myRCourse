@@ -10,7 +10,7 @@
 
 
 
-  <meta name="date" content="2017-12-01" />
+  <meta name="date" content="2017-07-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
       // Author information
       presenters: [
             {
-        name:  'Paulo Cirino Ribeiro Neto' ,
+        name:  'Paulo Cirino Ribeiro Neto - <a href="mailto:paulocirino.neto@gmail.com">paulocirino.neto@gmail.com</a>' ,
         company: '',
         gplus: '',
         twitter: '',
@@ -64,18 +64,18 @@
     }
 
     slides > slide {
-      -webkit-transition: all 0.4s ease-in-out;
-      -moz-transition: all 0.4s ease-in-out;
-      -o-transition: all 0.4s ease-in-out;
-      transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.6s ease-in-out;
+      -moz-transition: all 0.6s ease-in-out;
+      -o-transition: all 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
     }
 
     .auto-fadein {
       -webkit-transition: opacity 0.6s ease-in;
-      -webkit-transition-delay: 0.4s;
-      -moz-transition: opacity 0.6s ease-in 0.4s;
-      -o-transition: opacity 0.6s ease-in 0.4s;
-      transition: opacity 0.6s ease-in 0.4s;
+      -webkit-transition-delay: 0.6s;
+      -moz-transition: opacity 0.6s ease-in 0.6s;
+      -o-transition: opacity 0.6s ease-in 0.6s;
+      transition: opacity 0.6s ease-in 0.6s;
       opacity: 0;
     }
 
@@ -86,7 +86,7 @@
 
 <body style="opacity: 0">
 
-<slides>
+<slides class="layout-widescreen">
 
   <slide class="title-slide segue nobackground">
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
@@ -94,7 +94,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">26/01/2017</p>
+            <p style="margin-top: 6px; margin-left: -2px;">07/04/2017</p>
           </hgroup>
   </slide>
 
@@ -416,7 +416,7 @@
 
 <pre class = 'prettyprint lang-r'>&gt; sample(x = 6)</pre>
 
-<pre >## [1] 3 4 5 6 1 2</pre>
+<pre >## [1] 2 3 5 4 6 1</pre>
 
 <pre class = 'prettyprint lang-r'>&gt; x</pre>
 
@@ -428,7 +428,7 @@
 
 <pre class = 'prettyprint lang-r'>&gt; sample(x &lt;- 3 )</pre>
 
-<pre >## [1] 1 2 3</pre>
+<pre >## [1] 3 2 1</pre>
 
 <pre class = 'prettyprint lang-r'>&gt; x</pre>
 
@@ -674,43 +674,76 @@
 
 </article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions">
 
-<h3>class : Checks the class of a variable.</h3>
+<h3>install.packages : Install a package</h3>
 
-<pre class = 'prettyprint lang-r'>&gt; class(1234)</pre>
+<pre class = 'prettyprint lang-r'>&gt; install.packages(&#39;ggplot2&#39;)</pre>
 
-<pre >## [1] &quot;numeric&quot;</pre>
+<h3>library : Loads a package.</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; library(&#39;Rcpp&#39;)</pre>
+
+<h3>require : Try loading a package.</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; require(&#39;DT&#39;)</pre>
+
+<h3>source : Source R file</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; source(&#39;Code.R&#39;)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-1">
+
+<h3>file.exists : Check if file exists</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; file.exists(&#39;./Slides01.Rmd&#39;)</pre>
+
+<pre >## [1] TRUE</pre>
+
+<h3>dir : Lists all files in the path</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; dir(path = &#39;./&#39;)</pre>
+
+<pre >## [1] &quot;Notebook01.Rmd&quot; &quot;Slides01.html&quot;  &quot;Slides01.Rmd&quot;</pre>
+
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-2">
+
+<h3>ls : Lists all variables of enviroment</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; ls()</pre>
+
+<pre >##  [1] &quot;a&quot;       &quot;auxList&quot; &quot;auxVar&quot;  &quot;b&quot;       &quot;Bools&quot;   &quot;c&quot;       &quot;cols&quot;   
+##  [8] &quot;letters&quot; &quot;listVar&quot; &quot;name&quot;    &quot;number&quot;  &quot;numbers&quot; &quot;pi&quot;      &quot;x&quot;</pre>
+
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-3">
+
+<h3>save.image : Saves the entire environment</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; save.image(file = &#39;MyEnv.Rdata&#39;)</pre>
+
+<h3>load : Loads the entire environment</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; load(file = &#39;MyEnv.Rdata&#39;)</pre>
+
+<h3>saveRDS : Saves one variable</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; saveRDS(object = myDF, file = &#39;MyEnv.rds&#39;)</pre>
+
+<h3>readRDS : Loads one variable</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; myDF &lt;- readRDS(file = &#39;myDF.rds&#39;)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-4">
 
 <h3>help : Opens package or funciton documentation.</h3>
 
 <pre class = 'prettyprint lang-r'>&gt; help(lm)</pre>
 
-<h3>summary : Returns Variable Summary.</h3>
-
-<pre class = 'prettyprint lang-r'>&gt; summary(1:10)</pre>
-
-<pre >##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    1.00    3.25    5.50    5.50    7.75   10.00</pre>
-
-</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-1">
-
 <h3>Sys.time : Returns a Time Stamp.</h3>
 
 <pre class = 'prettyprint lang-r'>&gt; Sys.time()</pre>
 
-<pre >## [1] &quot;2017-04-07 11:45:49 BRT&quot;</pre>
+<pre >## [1] &quot;2017-04-07 14:14:20 BRT&quot;</pre>
 
-<h3>sample : Generates Sample integers</h3>
-
-<pre class = 'prettyprint lang-r'>&gt; sample(10, 3)</pre>
-
-<h3>rnorm : Generates Normal Distribution.</h3>
-
-<pre class = 'prettyprint lang-r'>&gt; rnorm(10)</pre>
-
-<pre >##  [1]  0.7381369  0.6910345  0.1479527 -0.4452492  1.3858773 -1.3815680
-##  [7] -0.1910876 -0.2642490 -0.7915317 -0.8580461</pre>
-
-</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-2">
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-5">
 
 <h3>print : Prints String as is.</h3>
 
@@ -722,31 +755,73 @@
 
 <pre class = 'prettyprint lang-r'>&gt; cat(&#39;R is super \&#39;cools\&#39;&#39;)</pre>
 
-<h3>try : Try a function but keeps going</h3>
+<pre >## R is super &#39;cools&#39;</pre>
 
-<pre class = 'prettyprint lang-r'>&gt; try(asdfasd * 1234213 / 0)</pre>
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-6">
 
-</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-3">
+<h3>paste : Paste things as characters</h3>
 
-<h3>library : Loads a package.</h3>
+<pre class = 'prettyprint lang-r'>&gt; paste(&quot;R&quot;, &#39; is like a &#39;, 10)</pre>
 
-<pre class = 'prettyprint lang-r'>&gt; library(&#39;Rcpp&#39;)</pre>
+<pre >## [1] &quot;R  is like a  10&quot;</pre>
 
-<h3>require : Try loading a package.</h3>
+<h3>class : Checks the class of a variable.</h3>
 
-<pre class = 'prettyprint lang-r'>&gt; require(&#39;DT&#39;)</pre>
+<pre class = 'prettyprint lang-r'>&gt; class(x = &#39;Something&#39;)</pre>
 
-<h3>install.packages : Install a package</h3>
+<pre >## [1] &quot;character&quot;</pre>
 
-<pre class = 'prettyprint lang-r'>&gt; install.packages(&#39;ggplot2&#39;)</pre>
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-7">
+
+<h3>sample : Generates Sample integers</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; sample(10, 3)</pre>
+
+<pre >## [1] 6 3 9</pre>
+
+<h3>rnorm : Generates Normal Distribution.</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; rnorm(10)</pre>
+
+<pre >##  [1] -0.8126471 -0.4357785  1.5131154 -0.1866491  0.5508495 -0.2190087
+##  [7] -0.3424352  0.1846425  3.6721596 -0.3006678</pre>
+
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-8">
+
+<h3>summary : Returns Variable Summary.</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; summary(object = iris)</pre>
+
+<pre >##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </pre>
 
 <h3>View : View a Data Frame or Matrix</h3>
 
 <pre class = 'prettyprint lang-r'>&gt; View(iris)</pre>
 
-<h3>source : Source R file</h3>
+</article></slide><slide class=''><hgroup><h2>Important Functions</h2></hgroup><article  id="important-functions-9">
 
-<pre class = 'prettyprint lang-r'>&gt; source(&#39;Code.R&#39;)</pre>
+<h3>order : Returns order of a vector</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; order(c(10, -3, 1)) # returns [2 3 1]</pre>
+
+<pre >## [1] 2 3 1</pre>
+
+<h3>try : Try a function but keeps going</h3>
+
+<pre class = 'prettyprint lang-r'>&gt; try(asdfasd * 1234213 / 0)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Math Functions</h2></hgroup><article  id="math-functions">
 
@@ -866,8 +941,10 @@
 </article></slide><slide class=''><hgroup><h2>Pro Tips</h2></hgroup><article  id="pro-tips-1">
 
 <ul>
-<li><p>Always use <strong>dim()</strong>, <strong>class()</strong>, <strong>names()</strong>, <strong>head()</strong>, <strong>summary()</strong> beforehand when dealing with unknown dataset;</p></li>
-<li><p>When creating scripts try using</p></li>
+<li>Always use <strong>dim()</strong>, <strong>class()</strong>, <strong>names()</strong>, <strong>head()</strong>, <strong>summary()</strong> beforehand when dealing with unknown dataset;</li>
+<li>When loading a packages, always check if it exists and if not download it;</li>
+<li>When sourcing files always check if they exist;</li>
+<li>When creating scripts that take long to run, always use <strong>try()</strong> function to catch error and deal with them, another great tool is alwasy printing to the screen some warning;</li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>Conditional and control flow statements;</h2></hgroup><article  id="conditional-and-control-flow-statements">

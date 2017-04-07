@@ -1,8 +1,12 @@
 ---
 title: "R Basics"
-author: "Paulo Cirino Ribeiro Neto"
-date: "26/01/2017"
-output: ioslides_presentation
+author: "Paulo Cirino Ribeiro Neto - paulocirino.neto@gmail.com"
+date: "07/04/2017"
+output:
+  ioslides_presentation:
+    transition: slower
+    widescreen: yes
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -76,7 +80,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, prompt = TRUE, results = TRUE, h
   - Categorical Variables
   
 ### Dates:
-  - Formated Dates
+  - Formatted Dates
 
 ## Data Structures {.build}
 ### Vectors :
@@ -124,7 +128,7 @@ data.frame(Name = c('John', 'Jack', 'Jose'),
   
 ## Data Structures {.build}
 ### Lists : 
-  - A collction of many different data types that can grow dynamically.
+  - A collection of many different data types that can grow dynamically.
 ```{r}
 list(Supermarket = data.frame(
   Product = c('Soup', 'Potatoes', 'Tooth Paste'),
@@ -242,8 +246,8 @@ x
 ```
 
 ## Variable Assignment {.build}
-  - The '->', '<-' and '=' are assign into the environment in which they are evaluated (inside a funciton or a script).
-  - The '->>' and '<<-' ared assigned globally.
+  - The '->', '<-' and '=' are assign into the environment in which they are evaluated (inside a function or a script).
+  - The '->>' and '<<-' are assigned globally.
   - The '<-' is the correct assignment operator for variables.
 ```{r}
 a <- 15
@@ -252,7 +256,7 @@ b <- 'character string'
 
 
 ## Variable Assignment {.build}
-  - The '=' is the correct assignment operator for subexpressions in a braced list of expressions.
+  - The '=' is the correct assignment operator for sub expressions in a braced list of expressions.
 ```{r}
 listVar <- list(var1 = 12, var2 = 'abc')
 print(x = listVar)
@@ -428,64 +432,20 @@ auxList$numbers
 
 ## Pro Tips
 - Always use the __?__ operator and the **help()** function when dealing with unknown functions or packages;
-- Always use **<-** operator when assignning a variable in the program a value, exe : **a <- 10** ;
-- Always use the **=** operator when assignning a variable in a function call, exe : **is.na(x = a)**;
+- Always use **<-** operator when assigning a variable in the program a value, ex : **a <- 10** ;
+- Always use the **=** operator when assigning a variable in a function call, ex : **is.na(x = a)**;
 - Avoid using **->** operator, because it makes the code messy;
-- Always use the **\$** operator to select named columns of data frame, exe : DF$X1 ;
-- Always use the **[]** operator to select row or columns when using operation, exe : **DF[DF$X1 == 1, ]**;
+- Always use the **\$** operator to select named columns of data frame, ex : DF$X1 ;
+- Always use the **[]** operator to select row or columns when using operation, ex : **DF[DF$X1 == 1, ]**;
 
 # Useful R base functions
 
 ## Important Functions
-### class : Checks the class of a variable.
-```{r}
-class(1234)
-```
-
-### help : Opens package or funciton documentation.
+### install.packages : Install a package
 ```{r, eval = FALSE}
-help(lm)
+install.packages('ggplot2')
 ```
 
-### summary : Returns Variable Summary.
-```{r}
-summary(1:10)
-```
-
-
-## Important Functions
-### Sys.time : Returns a Time Stamp.
-```{r}
-Sys.time()
-```
-
-### sample : Generates Sample integers
-```{r, eval = FALSE}
-sample(10, 3)
-```
-
-### rnorm : Generates Normal Distribution.
-```{r}
-rnorm(10)
-```
-
-## Important Functions
-### print : Prints String as is.
-```{r}
-print('R is super \'cools\'')
-```
-
-### cat : Prints C like function expressions.
-```{r, eval = FALSE}
-cat('R is super \'cools\'')
-```
-
-### try : Try a function but keeps going
-```{r}
-try(asdfasd * 1234213 / 0)
-```
-
-## Important Functions
 ### library : Loads a package.
 ```{r, eval = FALSE}
 library('Rcpp')
@@ -496,9 +456,97 @@ library('Rcpp')
 require('DT')
 ```
 
-### install.packages : Install a package
+### source : Source R file
 ```{r, eval = FALSE}
-install.packages('ggplot2')
+source('Code.R')
+```
+
+## Important Functions
+### file.exists : Check if file exists
+```{r, eval = TRUE}
+file.exists('./Slides01.Rmd')
+```
+
+### dir : Lists all files in the path
+```{r, eval = TRUE}
+dir(path = './')
+```
+
+## Important Functions
+### ls : Lists all variables of enviroment
+```{r, eval = TRUE}
+ls()
+```
+
+## Important Functions
+### save.image : Saves the entire environment
+```{r, eval = FALSE}
+save.image(file = 'MyEnv.Rdata')
+```
+
+### load : Loads the entire environment
+```{r, eval = FALSE}
+load(file = 'MyEnv.Rdata')
+```
+
+### saveRDS : Saves one variable
+```{r, eval = FALSE}
+saveRDS(object = myDF, file = 'MyEnv.rds')
+```
+
+### readRDS : Loads one variable
+```{r, eval = FALSE}
+myDF <- readRDS(file = 'myDF.rds')
+```
+
+## Important Functions
+### help : Opens package or funciton documentation.
+```{r, eval = FALSE}
+help(lm)
+```
+
+### Sys.time : Returns a Time Stamp.
+```{r}
+Sys.time()
+```
+
+## Important Functions
+### print : Prints String as is.
+```{r}
+print('R is super \'cools\'')
+```
+
+### cat : Prints C like function expressions.
+```{r, eval = TRUE}
+cat('R is super \'cools\'')
+```
+
+## Important Functions
+### paste : Paste things as characters
+```{r, eval = TRUE}
+paste("R", ' is like a ', 10)
+```
+
+### class : Checks the class of a variable.
+```{r}
+class(x = 'Something')
+```
+
+## Important Functions
+### sample : Generates Sample integers
+```{r, eval = TRUE}
+sample(10, 3)
+```
+
+### rnorm : Generates Normal Distribution.
+```{r, eval = TRUE}
+rnorm(10)
+```
+
+## Important Functions
+### summary : Returns Variable Summary.
+```{r, eval = TRUE}
+summary(object = iris)
 ```
 
 ### View : View a Data Frame or Matrix
@@ -507,34 +555,17 @@ View(iris)
 ```
 
 ## Important Functions
-### source : Source R file
-```{r, eval = FALSE}
-source('Code.R')
-```
-
-### paste : Paste things as characters
-```{r, eval = FALSE}
-paste('R', ' is like a ' 10)
-```
-
 ### order : Returns order of a vector
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 order(c(10, -3, 1)) # returns [2 3 1]
 ```
 
-### order : Returns order of a vector
-```{r, eval = FALSE}
-order(c(10, -3, 1)) # returns [2 3 1]
+### try : Try a function but keeps going
+```{r}
+try(asdfasd * 1234213 / 0)
 ```
-
-### order : Returns order of a vector
-```{r, eval = FALSE}
-rm( list = c('Data1', 'Data2') )
-```
-
 
 ## Math Functions
-
 ### t : Transpose
 ```{r}
 t(matrix(1:9, ncol = 3, nrow = 3))
@@ -622,10 +653,43 @@ names(myList)
 
 
 ## Pro Tips
-- Always use **dim()**, **class()**, **names()**, **head()**, **summary()** beforehand when dealing with unknown dataset;
+- Always use **dim()**, **class()**, **names()**, **head()**, **summary()** beforehand when dealing with unknown data-set;
+- When loading a packages always check if it exists. If it does not, then download it;
+- When sourcing files always check if they exist;
+- When creating scripts that take long to run, always use **try()** function to catch error and deal with them, another great idea is printing to the screen some warning and a time stamp;
 
-- When creating scripts try using 
 
 # Conditional and control flow statements;
+## Conditional Statements
+- **if()**;
+- **else if()**;
+- **else()**;
+- **ifelse()**;
+
+## Control Statements
+- **for()**;
+- **while()**;
+- **switch()**;
+
+
 # Creating custom Functions;
+## Creating Custom Function
+
 # The **apply** functions;
+## The apply familly
+- **apply()**;
+- **mapply()**;
+- **sapply()**;
+- **lapply()**;
+- **tapply()**;
+- **vapply()**;
+- **replicate()**
+### apply()
+### mapply()
+### sapply()
+### lapply()
+### tapply()
+### vapply()
+### replicate()
+
+

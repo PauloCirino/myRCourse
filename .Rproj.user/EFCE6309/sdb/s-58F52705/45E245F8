@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "---\ntitle: \"Syntax, Data Structures and Operators - Notebook\"\nauthor: \"Paulo Cirino Ribeiro Neto\"\ndate: \"26/01/2017\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## R Markdown\n\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.\n\nWhen you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\n\n```{r cars}\nsummary(cars)\n```\n\n## Including Plots\n\nYou can also embed plots, for example:\n\n```{r pressure, echo=FALSE}\nplot(pressure)\n```\n\nNote that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.\n",
+    "contents" : "---\ntitle: \"Syntax, Data Structures and Operators - Notebook\"\nauthor: \"Paulo Cirino Ribeiro Neto\"\ndate: \"26/01/2017\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n# R Basics\n",
     "created" : 1491515623173.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3344740217",
+    "hash" : "2828007695",
     "id" : "45E245F8",
-    "lastKnownWriteTime" : 1485447818,
-    "last_content_update" : 1485447818,
+    "lastKnownWriteTime" : 1491585944,
+    "last_content_update" : 1491585944078,
     "path" : "~/Dropbox/My-R-Course/R Basics/Notebook01.Rmd",
     "project_path" : "R Basics/Notebook01.Rmd",
     "properties" : {
