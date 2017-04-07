@@ -1,0 +1,112 @@
+---
+title: "My R Course - Introduction"
+author: "Paulo Cirino Ribeiro Neto"
+date: "26/01/2017"
+output:
+  ioslides_presentation:
+    transition: slower
+    widescreen: yes
+  beamer_presentation: default
+---
+
+```{r setup, include=FALSE, echo = FALSE, message = FALSE, background=TRUE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 10,  message = FALSE, background=TRUE, warning = FALSE)
+```
+
+## R Beginnings
+
+- Developed by **Ross Ihaka** and **Robert Gentleman** at Auckland University in 1993;
+
+- Created as a programming language for and by Statisticians;
+
+- Was an open [GNU project](http://www.gnu.org/) alternative for the [S and S-plus]() programming languages.
+
+## R Now
+
+- The R environment is written in C, FORTRAN and R itself;
+- Available for Windows, Mac-OS, and a range of Unix/Linux operating systems;
+- Maintained by the [R Foundation](https://www.r-project.org/foundation/) and the [R Development Core Team](https://www.r-project.org/contributors.html).
+
+## What R is Good For
+- Statistical Analysis;
+- Exploratory Plots;
+- Exploratory Data Analysis;
+- Automated Document Production;
+- Experiment Analysis;
+- Machine Learning.
+
+## Why Learn R
+- Fast and easy to use programming language;
+- A vast number of packages created and maintained by the R community;
+- Great platform that can be integrated with **Mark-Down** and **Tex** for the production of graphs, documents, reports and presentations;
+- Good data handling capabilities that can be connected to both SQL and No-SQL databases;
+- Capability of running C/C++ and FORTRAN for heavy calculations;
+- One of the best IDEs, the Rstudio;
+- And much more.
+
+## Installing R
+#### Debian :
+```{}
+$sudo apt-get install r-base r-base-dev
+```
+#### RedHat :
+```{}
+$sudo yum install R
+```
+#### MacOs - brew :
+```{}
+$brew install cask
+$brew tap homebrew/science
+$brew install Caskroom/cask/xquartz
+$brew install r
+```
+#### Windows :
+Download it from [CRAN](https://cran.r-project.org/bin/windows/base/R-3.3.2-win.exe).
+
+## Downloading RStudio
+- **Debian** : [32 Bits](https://download1.rstudio.org/rstudio-1.0.136-i386.deb) e [64 Bits](https://download1.rstudio.org/rstudio-1.0.136-amd64.deb)
+- **RedHat** : [32 Bits](https://download1.rstudio.org/rstudio-1.0.136-i686.rpm) e [64 Bits](https://download1.rstudio.org/rstudio-1.0.136-x86_64.rpm)
+- **MacOs** :  [64 Bits](https://download1.rstudio.org/RStudio-1.0.136.dmg)
+- **Windows** : [32/64 Bits](https://download1.rstudio.org/RStudio-1.0.136.exe)
+
+## Course Structure
+- **R Basics**;
+- **Plotting Data**;
+- **Manipulatting Data**;
+- **Getting Data**;
+- **Communicatting with Data**.
+
+## R Basics - Topics
+- Syntax, data structures and operators;
+- Conditional and control flow statements;
+- Creating custom Functions;
+- R useful functions;
+- The **apply** functions;
+
+## Presenting Data
+- R base plots;
+- Static Plots with **ggplot2** package;
+- Interactive plots and the **plotly** package;
+- Plotting graphs and maps;
+- Creating Latex Tables and the **xtable** package;
+- Using **DT** to create interactive tables;
+
+## Getting Data
+- The **readr** Way.
+- Reading excel files with **readxl**;
+- Connecting to a SQL Data Base;
+- Connecting to Spark;
+
+## Manipulatting Data
+- The **tidyverse**;
+- Manipulating Data with **dplyr**;
+- The **tidyr** approach;
+- Dealing with factors and the **forcats** package;
+- Dealing with strings and the **stringr** package;
+- Dealing with dates and the **lubridate** package;
+- Using **dplyr** to query **Spark**;
+
+## Communicatting with Data
+- Documents and Presentations with the *knitr* package;
+- Creating Web Apps with **shiny**.
+- Creating a REST API with **plumbr**
